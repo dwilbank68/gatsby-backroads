@@ -1,27 +1,46 @@
 import React from 'react';
-import Layout from "../components/Layout.jsx";
-import styles from '../css/error.module.css';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import Banner from '../components/Banner.jsx';
+import {useStaticQuery, graphql} from "gatsby";
+// import React, {useState, useEffect} from 'react';
+// import PropTypes from 'prop-types';
+// import Foo from './images/foo.png';
 
-const Error = ({children}) => {
+
+// import example from './example.jsx';
+// const example = (props) => {
+const example = ({whatever1, whatever2}) => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+               siteMetadata {
+                    description, title, author
+              }
+            }
+        }
+    `)
+
+    console.log('------------------------------------------');
+    console.log('data ',data);
+    console.log('------------------------------------------');
+    // const [isOpen, setOpen] = useState(false);
+
+    // const toggleNav = () => {
+    //    setOpen(isOpen => !isOpen)
+    // }
+
+
 
     return (
-        <Layout    className="Error">
-            <header className={styles.error}>
-                <Banner title="oops it's a dead end">
-                    <AniLink fade to="/" className="btn-white">
-                        Back to home page
-                    </AniLink>
-                </Banner>
-            </header>
-        </Layout>
+        <div    className="example">
+            <h1>title:</h1>
+            <h1>author:</h1>
+        </div>
     );
 };
 
 
-// Error.defaultProps = {};
-// Error.propTypes = {
+// example.defaultProps = {};
+// example.propTypes = {
 //     name:        PropTypes.string.isRequired,
 //     hndleIptChg: PropTypes.func,
 //     id:          PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]).isRequired,
@@ -38,7 +57,7 @@ const Error = ({children}) => {
 //
 // PropTypes -> array, bool, func, number, object, string, symbol
 
-export default Error;
+export default example;
 
 
 ///////////////////////////////////// BACKGROUND IMAGE /////////////////////////////////////
