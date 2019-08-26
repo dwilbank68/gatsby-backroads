@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx";
 import Example from "../examples/example2.jsx";
 import {graphql} from 'gatsby';
 import StyledHero from '../components/StyledHero.jsx';
+import ToursComponent from '../components/tours/Tours.jsx';
 
 class Tours extends Component {
 
@@ -11,6 +12,7 @@ class Tours extends Component {
         return (
             <Layout    className="">
                 <StyledHero img={img}/>
+                <ToursComponent/>
             </Layout>
         );
     }

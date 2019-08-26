@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx";
 import { Link } from "gatsby";
 import {graphql} from 'gatsby';
 import StyledHero from '../components/StyledHero.jsx';
+import BlogList from '../components/blog/BlogList.jsx';
 // import PropTypes from 'prop-types';
 // import Foo from './images/foo.png';
 
@@ -16,6 +17,7 @@ const Blog = ({data}) => {
     return (
         <Layout    className="blog">
             <StyledHero img={img}/>
+            <BlogList/>
         </Layout>
     );
 };
