@@ -4,18 +4,16 @@ import { Link } from "gatsby";
 import {graphql} from 'gatsby';
 import StyledHero from '../components/StyledHero.jsx';
 import BlogList from '../components/blog/BlogList.jsx';
-// import PropTypes from 'prop-types';
-// import Foo from './images/foo.png';
+import SEO from '../components/SEO.jsx';
 
 
-// import Blog from './Blog.jsx';
-// const Blog = (props) => {
 const Blog = ({data}) => {
 
     const img = data.blogBcg.childImageSharp.fluid;
 
     return (
         <Layout    className="blog">
+            <SEO title="Blog"/>
             <StyledHero img={img}/>
             <BlogList/>
         </Layout>

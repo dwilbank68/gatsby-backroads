@@ -5,6 +5,8 @@ import Layout from '../components/Layout.jsx';
 import BlogCard from '../components/blog/BlogCard.jsx';
 import Title from '../components/Title.jsx';
 import styles from '../css/blog.module.css';
+import SEO from '../components/SEO.jsx';
+
 
 const BlogListTemplate = (props) => {
 
@@ -17,16 +19,17 @@ const BlogListTemplate = (props) => {
 
     return (
         <Layout>
-           <section className={styles.blog}>
-               <Title titleLeft="latest" titleRight="posts"/>
-               <div className={styles.center}>
+            <SEO title="Blogs"/>
+            <section className={styles.blog}>
+                <Title titleLeft="latest" titleRight="posts"/>
+                <div className={styles.center}>
                    {data.posts.edges.map(({node}) => (
                        <BlogCard    key={node.id}
                                     blog={node}/>
                    ))}
-               </div>
+                </div>
 
-               <section className={styles.links}>
+                <section className={styles.links}>
 
                    {!isFirst &&
                    <AniLink fade to={prevPage} className={styles.link}>

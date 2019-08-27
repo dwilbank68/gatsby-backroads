@@ -4,6 +4,8 @@ import Example from "../examples/example2.jsx";
 import {graphql} from 'gatsby';
 import StyledHero from '../components/StyledHero.jsx';
 import ToursComponent from '../components/tours/Tours.jsx';
+import SEO from '../components/SEO.jsx';
+
 
 class Tours extends Component {
 
@@ -11,6 +13,7 @@ class Tours extends Component {
         const img = this.props.data.defaultBcg.childImageSharp.fluid;
         return (
             <Layout    className="">
+                <SEO title="Tours"/>
                 <StyledHero img={img}/>
                 <ToursComponent/>
             </Layout>

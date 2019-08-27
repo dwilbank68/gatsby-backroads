@@ -8,18 +8,14 @@ import Img from 'gatsby-image';
 import {FaMoneyBillWave, FaMap} from 'react-icons/fa';
 import Day from '../components/SingleTour/Day.jsx';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import SEO from '../components/SEO.jsx';
+
 
 const BlogTemplate = ({data}) => {
 
     const {title, published,
         text:{json}
     } = data.post;
-
-    console.log('------------------------------------------');
-    console.log('title ',title);
-    console.log('------------------------------------------');
-
-    // const [mainImage, ...tourImages] = images;
 
     const options = {
         renderNode: {
@@ -52,7 +48,8 @@ const BlogTemplate = ({data}) => {
 
     return (
         <Layout>
-           <section className={styles.blog}>
+            <SEO title={title}/>
+            <section className={styles.blog}>
                <div className={styles.center}>
                    <h1>{title}</h1>
                    <h4>published at: {published}</h4>

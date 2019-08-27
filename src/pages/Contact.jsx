@@ -3,18 +3,16 @@ import Layout from "../components/Layout.jsx";
 import {graphql} from 'gatsby';
 import StyledHero from '../components/StyledHero.jsx';
 import Kontakt from '../components/contact/Contact.jsx';
-// import PropTypes from 'prop-types';
-// import Foo from './images/foo.png';
+import SEO from '../components/SEO.jsx';
 
 
-// import Contact from './Contact.jsx';
-// const Contact = (props) => {
 const Contact = ({data}) => {
 
     const img = data.contactBcg.childImageSharp.fluid;
 
     return (
         <Layout    className="contact">
+            <SEO title="Contact"/>
             <StyledHero img={img}/>
             <Kontakt/>
         </Layout>
